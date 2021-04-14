@@ -1,8 +1,8 @@
 const map = getMap();
 let ws = null;
 
-// let hostname = window.location.hostname;
-let hostname = "192.168.1.150";
+// let hostname = window.location.hostname; // <-- this line is used when inlining to arduino code
+let hostname = "192.168.1.150"; // this IP is allocated by my router to my PS/2 remote using the mac address as identifier
 connect();
 init();
 
