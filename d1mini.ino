@@ -38,8 +38,8 @@ int last[] = {LOW, LOW};
 unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
 unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
-static const char ssid[] = "sharpwifi";
-static const char password[] = "remysharp";
+static const char ssid[] = "< YOUR SSID >";
+static const char password[] = "< YOUR SSID PASSWORD >";
 MDNSResponder mdns;
 
 ESP8266WiFiMulti WiFiMulti;
