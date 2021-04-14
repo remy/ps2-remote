@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remote ps/2</title>
+    <style>
+      html {
+        --c-bg: #f9f9f9;
+        --c-text: #212121;
+        --c-input-fg: #212121;
+        --c-input-border: #e0e0e0
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          --c-bg: #262626;
+          --c-text: #d6d6d6;
+          --c-input-fg: #fff;
+          --c-input-border: #000
+        }
+      }
+
+      html {
+        background: var(--c-bg);
+        color: var(--c-text);
+        height: 100%
+      }
+
+      button {
+        border-radius: 5px;
+        cursor: pointer;
+        color: var(--c-input-fg);
+        border: 2px solid var(--c-input-border);
+        background: rgba(1, 1, 1, 0.1);
+        padding: 8px 16px;
+        height: auto;
+        margin: 4px
+      }
+
+      *,
+      button {
+        font-family: monospace;
+        font-size: 1.1em
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px
+      }
+
+      #controls {
+        font-size: 0.8em
+      }
+
+      body[data-status]:after {
+        content: "Status: "attr(data-status);
+        display: block;
+        font-size: 0.8em;
+        padding: 16px 0px;
+        width: 8px;
+        height: 8px;
+        text-align: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        box-sizing: border-box;
+        background: #f44336;
+      }
+
+      body[data-status="1"]:after {
+        background: #4caf50;
+      }
+
+      body[data-status="1"] #container button {
+        opacity: 1;
+      }
+
+      #container button {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <div id="controls">
+      <button id="make">Add button</button>
+      <button id="reset">Reset buttons</button>
+    </div>
+    <p>Type on your keyboard or add buttons to control the PS/2</p>
+    <!-- note that when this is loaded into the ardunio code, I have inlined and minified the app.js file -->
+    <script src="app.js"></script>
+  </body>
+
+</html>
